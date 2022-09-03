@@ -197,7 +197,7 @@ public class ManageBooks extends javax.swing.JFrame {
         DefaultPieDataset barDataset = new DefaultPieDataset();
 
         try {
-            pst = con.prepareStatement("select book_name, count(*) as status_count from book_details group by quantity");
+            pst = con.prepareStatement("select book_name, count(*) as status_count from book_details group by book_name");
             rs = pst.executeQuery();
             while (rs.next()) {
                 barDataset.setValue(rs.getString("book_name"), new Double(rs.getInt("status_count")));
