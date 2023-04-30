@@ -61,7 +61,6 @@ public class IssueBook extends javax.swing.JFrame {
 
         } else {
             issuebutton.setEnabled(false);
-            clearbutton.setEnabled(false);
         }
 
     }

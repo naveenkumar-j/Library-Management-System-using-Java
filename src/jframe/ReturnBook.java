@@ -53,15 +53,15 @@ public class ReturnBook extends javax.swing.JFrame {
         jLabel19.setText(utype);
 
         if (usertype.equals("Admin")) {
-            issuebutton.setEnabled(true);
-            clearbutton.setEnabled(true);
+            findbutton.setEnabled(true);
+            returnbutton.setEnabled(true);
         } else if (usertype.equals("Librarian")) {
-            issuebutton.setEnabled(true);
-            clearbutton.setEnabled(true);
+            findbutton.setEnabled(true);
+            returnbutton.setEnabled(true);
 
         } else {
-            issuebutton.setEnabled(false);
-            clearbutton.setEnabled(false);
+            findbutton.setEnabled(true);
+            returnbutton.setEnabled(false);
         }
 
     }
@@ -218,8 +218,8 @@ public class ReturnBook extends javax.swing.JFrame {
         jLabel23 = new javax.swing.JLabel();
         txt_studentid = new app.bolivia.swing.JCTextField();
         jLabel25 = new javax.swing.JLabel();
-        clearbutton = new rojerusan.RSMaterialButtonRectangle();
-        issuebutton = new rojerusan.RSMaterialButtonRectangle();
+        returnbutton = new rojerusan.RSMaterialButtonRectangle();
+        findbutton = new rojerusan.RSMaterialButtonRectangle();
         jLabel3 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
@@ -445,23 +445,23 @@ public class ReturnBook extends javax.swing.JFrame {
         jLabel25.setText("Student Id:");
         jPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 380, 110, 30));
 
-        clearbutton.setBackground(new java.awt.Color(255, 51, 51));
-        clearbutton.setText("return book");
-        clearbutton.addActionListener(new java.awt.event.ActionListener() {
+        returnbutton.setBackground(new java.awt.Color(255, 51, 51));
+        returnbutton.setText("return book");
+        returnbutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                clearbuttonActionPerformed(evt);
+                returnbuttonActionPerformed(evt);
             }
         });
-        jPanel1.add(clearbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 550, 190, 50));
+        jPanel1.add(returnbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 550, 190, 50));
 
-        issuebutton.setBackground(new java.awt.Color(51, 153, 255));
-        issuebutton.setText("Find");
-        issuebutton.addActionListener(new java.awt.event.ActionListener() {
+        findbutton.setBackground(new java.awt.Color(51, 153, 255));
+        findbutton.setText("Find");
+        findbutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                issuebuttonActionPerformed(evt);
+                findbuttonActionPerformed(evt);
             }
         });
-        jPanel1.add(issuebutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 470, 190, 50));
+        jPanel1.add(findbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 470, 190, 50));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel3.setText("Naveenkumar J");
@@ -567,7 +567,7 @@ public class ReturnBook extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_studentidFocusLost
 
     // clear text method
-    private void clearbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearbuttonActionPerformed
+    private void returnbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnbuttonActionPerformed
         // TODO add your handling code here:
         if (returnBook() == true) {
             JOptionPane.showMessageDialog(this, "Book Returned Successfully!");
@@ -584,11 +584,11 @@ public class ReturnBook extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(this, "Book Returned Failed!");
         }
-    }//GEN-LAST:event_clearbuttonActionPerformed
+    }//GEN-LAST:event_returnbuttonActionPerformed
 
-    private void issuebuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_issuebuttonActionPerformed
+    private void findbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_findbuttonActionPerformed
         getIssueBookDetails();
-    }//GEN-LAST:event_issuebuttonActionPerformed
+    }//GEN-LAST:event_findbuttonActionPerformed
 
     // Developer details
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
@@ -648,8 +648,7 @@ public class ReturnBook extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private rojerusan.RSMaterialButtonRectangle clearbutton;
-    private rojerusan.RSMaterialButtonRectangle issuebutton;
+    private rojerusan.RSMaterialButtonRectangle findbutton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -684,6 +683,7 @@ public class ReturnBook extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_issueid;
     private javax.swing.JLabel lbl_studentid;
     private javax.swing.JLabel lbl_studentname;
+    private rojerusan.RSMaterialButtonRectangle returnbutton;
     private javax.swing.JLabel txt_bookerror;
     private app.bolivia.swing.JCTextField txt_bookid;
     private app.bolivia.swing.JCTextField txt_studentid;

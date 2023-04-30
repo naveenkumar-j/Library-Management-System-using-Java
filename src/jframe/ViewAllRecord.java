@@ -63,15 +63,6 @@ public class ViewAllRecord extends javax.swing.JFrame {
         this.usertype = utype;
         jLabel19.setText(utype);
 
-        if (usertype.equals("Admin")) {
-            allrecords_button.setEnabled(true);
-        } else if (usertype.equals("Librarian")) {
-            allrecords_button.setEnabled(true);
-
-        } else {
-            allrecords_button.setEnabled(false);
-        }
-
     }
 
     Connection con;

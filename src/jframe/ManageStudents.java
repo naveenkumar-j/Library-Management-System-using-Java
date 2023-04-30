@@ -77,17 +77,13 @@ public class ManageStudents extends javax.swing.JFrame {
             deletebutton.setEnabled(true);
             editbutton.setEnabled(true);
 
-        }
-
-        if (usertype.equals("Librarian")) {
+        } else if (usertype.equals("Librarian")) {
             addbutton.setEnabled(true);
             editbutton.setEnabled(true);
             deletebutton.setEnabled(true);
             editbutton.setEnabled(true);
 
-        }
-
-        if (usertype.equals("Guest")) {
+        } else {
             addbutton.setEnabled(false);
             editbutton.setEnabled(false);
             deletebutton.setEnabled(false);

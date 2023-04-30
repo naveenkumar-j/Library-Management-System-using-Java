@@ -75,22 +75,17 @@ public class ManageBooks extends javax.swing.JFrame {
             deletebutton.setEnabled(true);
             editbutton.setEnabled(true);
 
-        }
-
-        if (usertype.equals("Librarian")) {
+        } else if (usertype.equals("Librarian")) {
             addbutton.setEnabled(true);
             editbutton.setEnabled(true);
             deletebutton.setEnabled(true);
             editbutton.setEnabled(true);
 
-        }
-
-        if (usertype.equals("Guest")) {
+        } else {
             addbutton.setEnabled(false);
             editbutton.setEnabled(false);
             deletebutton.setEnabled(false);
             editbutton.setEnabled(false);
-
         }
 
     }
@@ -197,10 +192,10 @@ public class ManageBooks extends javax.swing.JFrame {
         DefaultPieDataset barDataset = new DefaultPieDataset();
 
         try {
-            pst = con.prepareStatement("select book_name, count(*) as status_count from book_details group by quantity");
+            pst = con.prepareStatement("select book_name,count(*) as issue_count from book_details group by book_name");
             rs = pst.executeQuery();
             while (rs.next()) {
-                barDataset.setValue(rs.getString("book_name"), new Double(rs.getInt("status_count")));
+                barDataset.setValue(rs.getString("book_name"), new Double(rs.getDouble("issue_count")));
 
             }
 

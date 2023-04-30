@@ -71,21 +71,6 @@ public class DefaultersList extends javax.swing.JFrame {
 
         this.usertype = utype;
         jLabel19.setText(utype);
-
-        if (utype.equals("Admin")) {
-            search_button.setEnabled(true);
-            allrecords_button.setEnabled(true);
-
-        } else if (utype.equals("Librarian")) {
-            search_button.setEnabled(true);
-            allrecords_button.setEnabled(true);
-
-        } else {
-            search_button.setEnabled(false);
-            allrecords_button.setEnabled(false);
-
-        }
-
     }
 
     Connection con;
@@ -249,6 +234,7 @@ public class DefaultersList extends javax.swing.JFrame {
         search_button = new rojerusan.RSMaterialButtonRectangle();
         allrecords_button = new rojerusan.RSMaterialButtonRectangle();
         panelPieChart = new javax.swing.JPanel();
+        clear_button = new rojerusan.RSMaterialButtonRectangle();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -446,7 +432,7 @@ public class DefaultersList extends javax.swing.JFrame {
                 txt_searchinputFocusLost(evt);
             }
         });
-        jPanel1.add(txt_searchinput, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 90, 140, -1));
+        jPanel1.add(txt_searchinput, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 90, 140, -1));
 
         search_button.setBackground(new java.awt.Color(255, 51, 51));
         search_button.setText("search");
@@ -455,7 +441,7 @@ public class DefaultersList extends javax.swing.JFrame {
                 search_buttonActionPerformed(evt);
             }
         });
-        jPanel1.add(search_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 90, 110, 40));
+        jPanel1.add(search_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 90, 110, 40));
 
         allrecords_button.setBackground(new java.awt.Color(255, 51, 51));
         allrecords_button.setText("All Records");
@@ -464,10 +450,19 @@ public class DefaultersList extends javax.swing.JFrame {
                 allrecords_buttonActionPerformed(evt);
             }
         });
-        jPanel1.add(allrecords_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 90, 110, 40));
+        jPanel1.add(allrecords_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 90, 110, 40));
 
         panelPieChart.setLayout(new java.awt.BorderLayout());
         jPanel1.add(panelPieChart, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, 370, 250));
+
+        clear_button.setBackground(new java.awt.Color(255, 51, 51));
+        clear_button.setText("CLEAR");
+        clear_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clear_buttonActionPerformed(evt);
+            }
+        });
+        jPanel1.add(clear_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 90, 110, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1250, 640));
 
@@ -555,6 +550,11 @@ public class DefaultersList extends javax.swing.JFrame {
         Record_Load();
     }//GEN-LAST:event_allrecords_buttonActionPerformed
 
+    private void clear_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clear_buttonActionPerformed
+        // TODO add your handling code here:
+        txt_searchinput.setText("");
+    }//GEN-LAST:event_clear_buttonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -593,6 +593,7 @@ public class DefaultersList extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private rojerusan.RSMaterialButtonRectangle allrecords_button;
+    private rojerusan.RSMaterialButtonRectangle clear_button;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
